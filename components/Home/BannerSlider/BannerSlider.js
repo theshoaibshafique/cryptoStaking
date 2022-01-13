@@ -1,27 +1,29 @@
-import React, { useRef, useState } from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import { useTheme } from '@material-ui/core/styles';
-import Hidden from '@material-ui/core/Hidden';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import ButtonBase from '@material-ui/core/ButtonBase';
-import Divider from '@material-ui/core/Divider';
-import Carousel from 'react-slick';
-import link from '~/public/text/link';
-import imgAPI from '~/public/images/imgAPI';
-import { withTranslation } from '~/i18n';
-import { useText, useTextAlign } from '~/theme/common';
-import useStyles from './slider-style';
+import React, { useRef, useState } from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import { useTheme } from "@material-ui/core/styles";
+import Hidden from "@material-ui/core/Hidden";
+import Box from "@material-ui/core/Box";
+import Container from "@material-ui/core/Container";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import ButtonBase from "@material-ui/core/ButtonBase";
+import Divider from "@material-ui/core/Divider";
+import Carousel from "react-slick";
+import link from "~/public/text/link";
+import imgAPI from "~/public/images/imgAPI";
+import { withTranslation } from "~/i18n";
+import { useText, useTextAlign } from "~/theme/common";
+import useStyles from "./slider-style";
+import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import CounterSingle from "../../CounterSingle";
 
 function BannerSlider(props) {
   // Theme breakpoints
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   const classes = useStyles();
   const text = useText();
@@ -38,23 +40,23 @@ function BannerSlider(props) {
     slidesToShow: 1,
     infinite: true,
     autoplay: false,
-    cssEase: 'ease-out',
+    cssEase: "ease-out",
     fade: isMobile,
     responsive: [
       {
         breakpoint: 960,
         settings: {
           dots: true,
-        }
-      }
-    ]
+        },
+      },
+    ],
   };
 
-  const handleAfterChange = currentSlide => {
+  const handleAfterChange = (currentSlide) => {
     setCurSlide(currentSlide);
   };
 
-  const gotoSlide = slide => {
+  const gotoSlide = (slide) => {
     slider.current.slickGoTo(slide);
   };
 
@@ -86,19 +88,35 @@ function BannerSlider(props) {
                         <Box px={{ lg: 3 }} alignItems="center">
                           <div className={classes.text}>
                             <div className={classes.title}>
-                              <h4 className={text.title2}>
-                                {t('common:crypto-landing.banner_title')}
-                              </h4>
+                              <h2 className={text.title}>
+                                Non-Custodial Staking Platform
+                              </h2>
                             </div>
                             <h5 className={text.subtitle2}>
-                              {t('common:crypto-landing.banner_subtitle')}
+                              Earn rewards by securing Proof of Stake
+                              blockchains
                             </h5>
                             <div className={classes.btnArea}>
-                              <Button size="large" variant="contained" color="primary" href={link.crypto.register} className={classes.button}>
-                                {t('common:btn_get')}
+                              <Button
+                                size="large"
+                                variant="contained"
+                                color="primary"
+                                href={link.crypto.register}
+                                className={classes.button}
+                                endIcon={<ArrowForwardIcon />}
+                              >
+                                Stake Now
                               </Button>
-                              <Button size="large" variant="outlined" component={AnchorLink} color="primary" href="#view-market" className={classes.button}>
-                                {t('common:crypto-landing.banner_viewmarket')}
+                              <Button
+                                size="large"
+                                variant="outlined"
+                                component={AnchorLink}
+                                color="primary"
+                                href="#view-market"
+                                className={classes.button}
+                                endIcon={<ArrowForwardIcon />}
+                              >
+                                Learn More
                               </Button>
                             </div>
                           </div>
@@ -108,7 +126,7 @@ function BannerSlider(props) {
                         <Box px={{ sm: 3 }}>
                           <div className={classes.img}>
                             <img
-                              className={clsx('img-2d3d', classes.imgSlide1)}
+                              className={clsx("img-2d3d", classes.imgSlide1)}
                               src={imgAPI.crypto[5]}
                               data-2d={imgAPI.crypto[4]}
                               data-3d={imgAPI.crypto[5]}
@@ -121,7 +139,7 @@ function BannerSlider(props) {
                   </Container>
                 </div>
               </div>
-              <div className={classes.slide}>
+              {/* <div className={classes.slide}>
                 <div className={classes.inner}>
                   <Container>
                     <Grid container justify="flex-end" alignItems="center" direction={isMobile ? 'column-reverse' : 'row'}>
@@ -204,7 +222,7 @@ function BannerSlider(props) {
                     </Grid>
                   </Container>
                 </div>
-              </div>
+              </div> */}
             </Carousel>
           </div>
         </div>
@@ -212,24 +230,62 @@ function BannerSlider(props) {
           <Hidden smDown>
             <Container>
               <nav className={classes.slideNav}>
+                <CounterSingle />
+                <Divider
+                  className={classes.divider}
+                  orientation="vertical"
+                  flexItem
+                />
+                <CounterSingle />
+                <Divider
+                  className={classes.divider}
+                  orientation="vertical"
+                  flexItem
+                />
+                <CounterSingle />
+              </nav>
+            </Container>
+          </Hidden>
+        </div>
+        {/* <div className={classes.slideNavGroup}>
+          <Hidden smDown>
+            <Container>
+              <nav className={classes.slideNav}>
                 <ButtonBase
-                  className={clsx(classes.btnNav, curSlide === 0 ? classes.active : '')}
+                  className={clsx(
+                    classes.btnNav,
+                    curSlide === 0 ? classes.active : ""
+                  )}
                   onClick={() => gotoSlide(0)}
                 >
                   <strong>First Slide</strong>
                   Interdum et malesuada fames ac ante
                 </ButtonBase>
-                <Divider className={classes.divider} orientation="vertical" flexItem />
+                <Divider
+                  className={classes.divider}
+                  orientation="vertical"
+                  flexItem
+                />
                 <ButtonBase
-                  className={clsx(classes.btnNav, curSlide === 1 ? classes.active : '')}
+                  className={clsx(
+                    classes.btnNav,
+                    curSlide === 1 ? classes.active : ""
+                  )}
                   onClick={() => gotoSlide(1)}
                 >
                   <strong>Second Slide</strong>
                   Interdum et malesuada fames ac ante
                 </ButtonBase>
-                <Divider className={classes.divider} orientation="vertical" flexItem />
+                <Divider
+                  className={classes.divider}
+                  orientation="vertical"
+                  flexItem
+                />
                 <ButtonBase
-                  className={clsx(classes.btnNav, curSlide === 2 ? classes.active : '')}
+                  className={clsx(
+                    classes.btnNav,
+                    curSlide === 2 ? classes.active : ""
+                  )}
                   onClick={() => gotoSlide(2)}
                 >
                   <strong>Third Slide</strong>
@@ -238,7 +294,7 @@ function BannerSlider(props) {
               </nav>
             </Container>
           </Hidden>
-        </div>
+        </div> */}
       </div>
     </div>
   );
@@ -249,7 +305,7 @@ BannerSlider.propTypes = {
 };
 
 BannerSlider.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'crypto-landing'],
+  namespacesRequired: ["common", "crypto-landing"],
 });
 
-export default withTranslation(['common', 'crypto-landing'])(BannerSlider);
+export default withTranslation(["common", "crypto-landing"])(BannerSlider);
