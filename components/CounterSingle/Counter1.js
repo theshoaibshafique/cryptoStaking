@@ -8,7 +8,7 @@ import { withTranslation } from "~/i18n";
 import { useText } from "~/theme/common";
 import useStyles from "./counter-single-style";
 
-function CounterSingle(props) {
+function Counter1(props) {
   const classes = useStyles();
   const text = useText();
   const { t } = props;
@@ -25,11 +25,9 @@ function CounterSingle(props) {
     <div className={classes.counterWrap}>
       <Container maxWidth="md">
         <ReactWOW animation="fadeIn" offset={200} callback={handlePlay}>
-          <p className={text.subtitle2}>
-            {t("common:crypto-landing.footer_counter")}
-          </p>
+          <p className={text.subtitle2}>Total Value Locked</p>
           <Typography variant="h2" className={text.title}>
-            {countup(2, play)}
+            <span>&#36; </span> {countup(2, play)}
             &#44;
             {countup(234, play)}
             &#44;
@@ -45,4 +43,4 @@ CounterSingle.propTypes = {
   t: PropTypes.func.isRequired,
 };
 
-export default withTranslation(["crypto-landing"])(CounterSingle);
+export default withTranslation(["crypto-landing"])(Counter1);

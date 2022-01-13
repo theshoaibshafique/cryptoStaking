@@ -1,1 +1,1 @@
-export { default } from './CounterSingle';
+export { default } from "./CounterSingle";
