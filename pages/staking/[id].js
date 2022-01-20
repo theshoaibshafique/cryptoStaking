@@ -7,7 +7,7 @@ import useStyles from "~/theme/staking-style";
 import Footer from "../../components/Footer";
 import brand from "../../public/text/brand";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { Paper, Grid, Slider } from "@material-ui/core";
+import { Paper, Grid, Slider, TextField } from "@material-ui/core";
 import Header from "../../components/Header";
 import PropTypes from "prop-types";
 import axios from "axios";
@@ -112,6 +112,11 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
   const handleChange = (event, newValue) => {
     setCoinAmount(newValue);
   };
+
+  // const handleInputChange = (event) => {
+  //   event.preventDefault();
+  //   setCoinAmount(event.target.value);
+  // };
   chartData = marketData.map((x) => {
     return {
       date: x[0],
@@ -272,6 +277,14 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
                         max={10000}
                       />
                     </div>
+                    {/* <div>
+                      <TextField
+                        label="Custom Amount"
+                        placeholder="Custom Amount"
+                        variant="outlined"
+                        onChange={handleInputChange}
+                      />
+                    </div> */}
                   </Grid>
                   <Grid item xs={12} md={6}>
                     <div style={{ marginTop: "10px", marginBottom: "20px" }}>

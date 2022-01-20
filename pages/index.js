@@ -66,7 +66,8 @@ function Landing(props) {
           <section id="delegate" className={classes.spaceTop}>
             <Stake />
           </section>
-          <section id="view-market" className={classes.spaceTop}>
+          <section className={classes.spaceTop}></section>
+          {/* <section id="view-market" className={classes.spaceTop}>
             <TopCoin />
           </section>
           <section id="testimonials" className={classes.spaceTopShort}>
@@ -75,14 +76,14 @@ function Landing(props) {
           <section id="news" className={classes.spaceTopShort}>
             <NewsEvent />
           </section>
-          <DownloadBanner />
+          <DownloadBanner /> */}
         </main>
-        <FooterExtend withCounter>
-          <Footer toggleDir={onToggleDir} />
-        </FooterExtend>
-        <Hidden smDown>
+        <Footer toggleDir={onToggleDir} />
+        {/* <FooterExtend>
+        </FooterExtend> */}
+        {/* <Hidden smDown>
           <Corner />
-        </Hidden>
+        </Hidden> */}
         {/* <Hidden mdDown>
           <Notification />
         </Hidden> */}

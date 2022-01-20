@@ -1,27 +1,27 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
-import { useTheme } from '@material-ui/core/styles';
-import Accordion from '@material-ui/core/Accordion';
-import AccordionSummary from '@material-ui/core/AccordionSummary';
-import AccordionDetails from '@material-ui/core/AccordionDetails';
-import LangIcon from '@material-ui/icons/Language';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-import Typography from '@material-ui/core/Typography';
-import Select from '@material-ui/core/Select';
-import OutlinedInput from '@material-ui/core/OutlinedInput';
-import MenuItem from '@material-ui/core/MenuItem';
-import Link from '@material-ui/core/Link';
-import IconButton from '@material-ui/core/IconButton';
-import { i18n, withTranslation } from '~/i18n';
-import logo from '~/public/images/logo-crypto.svg';
-import brand from '~/public/text/brand';
-import { useTextAlign } from '~/theme/common';
-import useStyles from './sitemap-style';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
+import { useTheme } from "@material-ui/core/styles";
+import Accordion from "@material-ui/core/Accordion";
+import AccordionSummary from "@material-ui/core/AccordionSummary";
+import AccordionDetails from "@material-ui/core/AccordionDetails";
+import LangIcon from "@material-ui/icons/Language";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
+import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Typography from "@material-ui/core/Typography";
+import Select from "@material-ui/core/Select";
+import OutlinedInput from "@material-ui/core/OutlinedInput";
+import MenuItem from "@material-ui/core/MenuItem";
+import Link from "@material-ui/core/Link";
+import IconButton from "@material-ui/core/IconButton";
+import { i18n, withTranslation } from "~/i18n";
+import logo from "~/public/images/smart-logo.svg";
+import brand from "~/public/text/brand";
+import { useTextAlign } from "~/theme/common";
+import useStyles from "./sitemap-style";
 
 function Copyright() {
   return (
@@ -34,19 +34,29 @@ function Copyright() {
 
 const footers = [
   {
-    title: 'Company',
-    description: ['Team', 'History', 'Contact us', 'Locations'],
-    link: ['#team', '#history', '#contact-us', '#locations'],
+    title: "Company",
+    description: ["Team", "History", "Contact us", "Locations"],
+    link: ["#team", "#history", "#contact-us", "#locations"],
   },
   {
-    title: 'Resources',
-    description: ['Resource', 'Resource name', 'Another resource', 'Final resource'],
-    link: ['#resource', '#resource-name', '#another-resource', '#final-resource'],
+    title: "Resources",
+    description: [
+      "Resource",
+      "Resource name",
+      "Another resource",
+      "Final resource",
+    ],
+    link: [
+      "#resource",
+      "#resource-name",
+      "#another-resource",
+      "#final-resource",
+    ],
   },
   {
-    title: 'Legal',
-    description: ['Privacy policy', 'Terms of use'],
-    link: ['#privacy-policy', '#terms-of-use'],
+    title: "Legal",
+    description: ["Privacy policy", "Terms of use"],
+    link: ["#privacy-policy", "#terms-of-use"],
   },
 ];
 
@@ -54,8 +64,8 @@ function Footer(props) {
   const [ctn, setCtn] = useState(null);
   // Theme breakpoints
   const theme = useTheme();
-  const isDesktop = useMediaQuery(theme.breakpoints.up('md'));
-  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
+  const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
 
   // Translation Function
   const { t } = props;
@@ -63,25 +73,25 @@ function Footer(props) {
   const classes = useStyles();
   const align = useTextAlign();
   const [values, setValues] = useState({
-    lang: ''
+    lang: "",
   });
 
   useEffect(() => {
     setValues({ lang: i18n.language });
-    setCtn(document.getElementById('main-wrap'));
+    setCtn(document.getElementById("main-wrap"));
   }, []);
 
   function handleChange(event) {
-    setValues(oldValues => ({
+    setValues((oldValues) => ({
       ...oldValues,
       [event.target.name]: event.target.value,
     }));
-    if (event.target.value === 'ara') {
-      i18n.changeLanguage('ara');
-      props.toggleDir('rtl');
+    if (event.target.value === "ara") {
+      i18n.changeLanguage("ara");
+      props.toggleDir("rtl");
     } else {
       i18n.changeLanguage(event.target.value);
-      props.toggleDir('ltr');
+      props.toggleDir("ltr");
     }
   }
 
@@ -91,20 +101,35 @@ function Footer(props) {
         <Grid item xs={12} md={3}>
           <div className={classes.logo}>
             <img src={logo} alt="logo" />
-            {brand.crypto.projectName}
+            {/* {brand.crypto.projectName} */}
           </div>
-          <Typography color="textPrimary" className={classes.footerDesc} gutterBottom>
-            {t('common:crypto-landing.banner_subtitle')}
+          <Typography
+            color="textPrimary"
+            className={classes.footerDesc}
+            gutterBottom
+          >
+            {t("common:crypto-landing.banner_subtitle")}
           </Typography>
           {isDesktop && <Copyright />}
         </Grid>
         <Grid item xs={12} md={6}>
           <Grid container justify="space-evenly">
-            {footers.map(footer => (
-              <Grid item xs={12} md={3} key={footer.title} className={classes.siteMapItem}>
+            {footers.map((footer) => (
+              <Grid
+                item
+                xs={12}
+                md={3}
+                key={footer.title}
+                className={classes.siteMapItem}
+              >
                 {isDesktop && (
                   <div>
-                    <Typography variant="h6" className={classes.title} color="textPrimary" gutterBottom>
+                    <Typography
+                      variant="h6"
+                      className={classes.title}
+                      color="textPrimary"
+                      gutterBottom
+                    >
                       {footer.title}
                     </Typography>
                     <ul>
@@ -126,22 +151,26 @@ function Footer(props) {
                     }}
                   >
                     <AccordionSummary
-                      expandIcon={<ExpandMoreIcon className={classes.accordionIcon} />}
+                      expandIcon={
+                        <ExpandMoreIcon className={classes.accordionIcon} />
+                      }
                       aria-controls="panel1a-content"
                       id="panel1a-header"
                       classes={{
                         content: classes.accordionContent,
                       }}
                     >
-                      <strong>
-                        {footer.title}
-                      </strong>
+                      <strong>{footer.title}</strong>
                     </AccordionSummary>
                     <AccordionDetails>
                       <ul>
                         {footer.description.map((item, index) => (
                           <li key={item}>
-                            <Link href={footer.link[index]} variant="subtitle1" color="textSecondary">
+                            <Link
+                              href={footer.link[index]}
+                              variant="subtitle1"
+                              color="textSecondary"
+                            >
                               {item}
                             </Link>
                           </li>
@@ -173,15 +202,21 @@ function Footer(props) {
             value={values.lang}
             onChange={handleChange}
             MenuProps={{
-              container: ctn
+              container: ctn,
             }}
-            startAdornment={(
+            startAdornment={
               <InputAdornment className={classes.icon} position="start">
                 <LangIcon />
               </InputAdornment>
-            )}
+            }
             className={classes.selectLang}
-            input={<OutlinedInput labelWidth={200} name="lang" id="outlined-lang-simple" />}
+            input={
+              <OutlinedInput
+                labelWidth={200}
+                name="lang"
+                id="outlined-lang-simple"
+              />
+            }
           >
             <MenuItem value="eng">English</MenuItem>
             <MenuItem value="deu">Deutsch</MenuItem>
@@ -212,4 +247,4 @@ Footer.defaultProps = {
   toggleDir: () => {},
 };
 
-export default withTranslation(['crypto-landing'])(Footer);
+export default withTranslation(["crypto-landing"])(Footer);
