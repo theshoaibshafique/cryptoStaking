@@ -43,10 +43,10 @@ function Landing(props) {
       </Head>
       <CssBaseline />
       <div className={classes.mainWrap}>
-        <Hidden mdDown>
+        {/* <Hidden mdDown>
           <MarketPrice />
-        </Hidden>
-        <Header onToggleDark={onToggleDark} onToggleDir={onToggleDir} home />
+        </Hidden> */}
+        <Header onToggleDark={onToggleDark} onToggleDir={onToggleDir} />
         <main className={clsx(classes.containerWrap, classes.containerFront)}>
           <section id="home">
             <BannerSlider />
@@ -63,7 +63,7 @@ function Landing(props) {
           >
             <Feature />
           </section> */}
-          <section id="benefit" className={classes.spaceTop}>
+          <section id="delegate" className={classes.spaceTop}>
             <Stake />
           </section>
           <section id="view-market" className={classes.spaceTop}>
@@ -83,9 +83,9 @@ function Landing(props) {
         <Hidden smDown>
           <Corner />
         </Hidden>
-        <Hidden mdDown>
+        {/* <Hidden mdDown>
           <Notification />
-        </Hidden>
+        </Hidden> */}
       </div>
     </React.Fragment>
   );

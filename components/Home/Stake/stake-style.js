@@ -155,21 +155,24 @@ const benefitStyles = makeStyles((theme) => ({
   //   },
   paper: {
     position: "relative",
-    //height: 174,
+    height: 280,
 
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    padding: theme.spacing(2),
+    justifyContent: "center",
+    padding: theme.spacing(1),
     margin: theme.spacing(1, 0),
     [theme.breakpoints.up("sm")]: {
-      padding: theme.spacing(1, 3),
+      padding: theme.spacing(2),
       margin: theme.spacing(4, 0, 0, 0),
-      width: 239,
+      width: 270,
+      height: 350,
     },
     "& img": {
       width: "50%",
       contain: "cover",
+      marginBottom: "10px",
     },
   },
   button: {},

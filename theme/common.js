@@ -1,109 +1,115 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
-const sectionMargin = margin => (margin * 20);
+const sectionMargin = (margin) => margin * 20;
 const titleStyle = {
   fontSize: 48,
-  lineHeight: '62px',
-  textTransform: 'capitalize',
+  lineHeight: "62px",
+  textTransform: "capitalize",
   fontWeight: 700,
   marginBottom: 40,
-  position: 'relative'
+  position: "relative",
 };
 
-export const useSpacing = makeStyles(theme => ({
+export const useSpacing = makeStyles((theme) => ({
   mainWrap: {
-    position: 'relative',
-    width: '100%',
-    overflow: 'hidden',
-    background: theme.palette.type === 'dark' ? theme.palette.background.default : theme.palette.background.paper,
+    position: "relative",
+    width: "100%",
+    overflow: "hidden",
+    background:
+      theme.palette.type === "dark"
+        ? theme.palette.background.default
+        : theme.palette.background.paper,
     '& ul[class="slick-dots"]': {
-      '& li': {
-        margin: '1px 2px',
-        '& button:before': {
-          borderRadius: '50%',
-          color: 'transparent !important',
+      "& li": {
+        margin: "1px 2px",
+        "& button:before": {
+          borderRadius: "50%",
+          color: "transparent !important",
           width: 10,
           height: 10,
           left: 3,
           border: `2px solid ${theme.palette.primary.main}`,
           opacity: 0.5,
-          transition: 'all 0.3s ease'
+          transition: "all 0.3s ease",
         },
         '&[class="slick-active"]': {
-          '& button:before': {
+          "& button:before": {
             width: 20,
             height: 20,
             top: -5,
             left: -1,
             opacity: 1,
-            background: theme.palette.primary.main
-          }
-        }
-      }
-    }
+            background: theme.palette.primary.main,
+          },
+        },
+      },
+    },
   },
   colouredPage: {
-    position: 'relative',
-    overflow: 'hidden',
+    position: "relative",
+    overflow: "hidden",
     color: theme.palette.common.white,
-    backgroundColor: theme.palette.type === 'dark' ? theme.palette.primary.dark : theme.palette.primary.main,
+    backgroundColor:
+      theme.palette.type === "dark"
+        ? theme.palette.primary.dark
+        : theme.palette.primary.main,
   },
   spaceBottom: {
     marginBottom: sectionMargin(6),
-    [theme.breakpoints.down('md')]: {
-      marginBottom: sectionMargin(4)
-    }
+    [theme.breakpoints.down("md")]: {
+      marginBottom: sectionMargin(4),
+    },
   },
   spaceTop: {
     marginTop: sectionMargin(6),
-    [theme.breakpoints.down('md')]: {
-      marginTop: sectionMargin(4)
-    }
+    [theme.breakpoints.down("md")]: {
+      marginTop: sectionMargin(4),
+    },
   },
   spaceBottomShort: {
     marginBottom: sectionMargin(4),
-    [theme.breakpoints.down('md')]: {
-      marginBottom: sectionMargin(2.4)
-    }
+    [theme.breakpoints.down("md")]: {
+      marginBottom: sectionMargin(2.4),
+    },
   },
   spaceTopShort: {
     marginTop: sectionMargin(4),
-    [theme.breakpoints.down('md')]: {
-      marginTop: sectionMargin(2.4)
-    }
+    [theme.breakpoints.down("md")]: {
+      marginTop: sectionMargin(2.4),
+    },
   },
   containerWrap: {
-    '& > section': {
-      position: 'relative'
-    }
+    "& > section": {
+      position: "relative",
+    },
   },
   containerGeneral: {
-    position: 'relative',
+    position: "relative",
     paddingTop: theme.spacing(4),
     marginTop: theme.spacing(7),
     marginBottom: theme.spacing(5),
-    [theme.breakpoints.up('sm')]: {
+    [theme.breakpoints.up("sm")]: {
       paddingLeft: 32,
-      paddingRight: 32
-    }
+      paddingRight: 32,
+    },
   },
   containerFront: {
-    position: 'relative',
-    zIndex: 1
+    position: "relative",
+    zIndex: 1,
   },
   fullScreenContainer: {
-    height: '100vh',
-    position: 'relative',
-    display: 'flex',
-    overflow: 'hidden'
+    height: "100vh",
+    position: "relative",
+    display: "flex",
+    overflow: "hidden",
   },
   maintenanceIcon: {
     margin: theme.spacing(3),
     width: 100,
     height: 100,
-    '& svg': {
+    "& svg": {
       width: 50,
-      height: 50
+      height: 50,
     },
   },
   primaryIcon: {
@@ -119,26 +125,26 @@ export const useSpacing = makeStyles(theme => ({
     color: theme.palette.accent.dark,
   },
   fb: {
-    color: '#3f51b5'
+    color: "#3f51b5",
   },
   ig: {
-    color: '#9c27b0'
+    color: "#9c27b0",
   },
   tw: {
-    color: '#2196f3'
+    color: "#2196f3",
   },
   li: {
-    color: '#2196f3'
+    color: "#2196f3",
   },
   btnNotify: {
     minWidth: 120,
-    margin: 4
-  }
+    margin: 4,
+  },
 }));
 
-export const usePopup = makeStyles(theme => ({
+export const usePopup = makeStyles((theme) => ({
   appBar: {
-    position: 'relative',
+    position: "relative",
   },
   title: {
     marginLeft: theme.spacing(2),
@@ -148,124 +154,178 @@ export const usePopup = makeStyles(theme => ({
 
 export const useTextAlign = makeStyles({
   textCenter: {
-    textAlign: 'center'
+    textAlign: "center",
   },
   textLeft: {
-    textAlign: 'left'
+    textAlign: "left",
   },
   textRight: {
-    textAlign: 'right'
-  }
+    textAlign: "right",
+  },
 });
 
 export const useFloat = makeStyles({
   floatLeft: {
-    float: 'left'
+    float: "left",
   },
   floatRight: {
-    float: 'right'
+    float: "right",
   },
 });
 
-export const useText = makeStyles(theme => ({
+export const useText = makeStyles((theme) => ({
   title: {
     fontWeight: theme.typography.fontWeightBold,
     fontSize: 48,
-    lineHeight: '72px',
-    [theme.breakpoints.down('md')]: {
+    lineHeight: "72px",
+    [theme.breakpoints.down("md")]: {
       fontSize: 38,
-      lineHeight: '60px'
+      lineHeight: "60px",
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       fontSize: 28,
-      lineHeight: '44px'
+      lineHeight: "44px",
     },
   },
   title2: {
     fontSize: 36,
-    lineHeight: '56px',
+    lineHeight: "56px",
     fontWeight: theme.typography.fontWeightBold,
-    [theme.breakpoints.down('md')]: {
+    [theme.breakpoints.down("md")]: {
       fontSize: 32,
-      lineHeight: '48px'
+      lineHeight: "48px",
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       fontSize: 24,
-      lineHeight: '36px',
-    }
+      lineHeight: "36px",
+    },
+  },
+  title3: {
+    fontSize: 22,
+    // lineHeight: "56px",
+    fontWeight: theme.typography.fontWeightBold,
+    [theme.breakpoints.down("md")]: {
+      fontSize: 20,
+      //lineHeight: "48px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 20,
+      //lineHeight: "36px",
+    },
+    color: theme.palette.primary.main,
+  },
+  title4: {
+    fontSize: 14,
+    // lineHeight: "56px",
+    textTransform: "uppercase",
+    fontWeight: theme.typography.fontWeightBold,
+    [theme.breakpoints.down("md")]: {
+      fontSize: 12,
+      //lineHeight: "48px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 12,
+      //lineHeight: "36px",
+    },
+    color: theme.palette.primary.main,
   },
   subtitle: {
     fontWeight: theme.typography.fontWeightMedium,
     fontSize: 28,
-    lineHeight: '44px',
-    [theme.breakpoints.down('md')]: {
+    lineHeight: "44px",
+    [theme.breakpoints.down("md")]: {
       fontSize: 24,
-      lineHeight: '36px',
+      lineHeight: "36px",
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       fontSize: 18,
-      lineHeight: '28px',
+      lineHeight: "28px",
     },
   },
   subtitle2: {
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: 22,
-    lineHeight: '32px',
-    [theme.breakpoints.down('md')]: {
+    lineHeight: "32px",
+    [theme.breakpoints.down("md")]: {
       fontSize: 20,
-      lineHeight: '32px',
+      lineHeight: "32px",
     },
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       fontSize: 16,
-      lineHeight: '24px',
+      lineHeight: "24px",
+    },
+  },
+  subtitle3: {
+    fontWeight: theme.typography.fontWeightRegular,
+    fontSize: 18,
+    lineHeight: "32px",
+    [theme.breakpoints.down("md")]: {
+      fontSize: 16,
+      lineHeight: "32px",
+    },
+    [theme.breakpoints.down("xs")]: {
+      fontSize: 14,
+      lineHeight: "24px",
     },
   },
   paragraph: {
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: 16,
-    lineHeight: '24px'
+    lineHeight: "24px",
   },
   caption: {
     fontWeight: theme.typography.fontWeightRegular,
     fontSize: 14,
-    lineHeight: '24px',
+    lineHeight: "24px",
     color: theme.palette.text.secondary,
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.down("xs")]: {
       fontSize: 14,
-      lineHeight: '22px',
+      lineHeight: "22px",
     },
   },
   titlePrimary: {
     ...titleStyle,
-    color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.primary.light
+        : theme.palette.primary.dark,
   },
   titleSecondary: {
     ...titleStyle,
-    color: theme.palette.type === 'dark' ? theme.palette.secondary.light : theme.palette.secondary.dark
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.secondary.light
+        : theme.palette.secondary.dark,
   },
   textPrimary: {
-    color: theme.palette.type === 'dark' ? theme.palette.primary.light : theme.palette.primary.dark
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.primary.light
+        : theme.palette.primary.dark,
   },
   textSecondary: {
-    color: theme.palette.type === 'dark' ? theme.palette.secondary.light : theme.palette.secondary.dark
+    color:
+      theme.palette.type === "dark"
+        ? theme.palette.secondary.light
+        : theme.palette.secondary.dark,
   },
   primaryColor: {
-    color: theme.palette.primary.main
+    color: theme.palette.primary.main,
   },
   secondaryColor: {
-    color: theme.palette.secondary.main
+    color: theme.palette.secondary.main,
   },
   accentColor: {
-    color: theme.palette.accent.main
+    color: theme.palette.accent.main,
   },
   capitalize: {
-    textTransform: 'capitalize'
+    textTransform: "capitalize",
   },
   uppercase: {
-    textTransform: 'uppercase'
+    textTransform: "uppercase",
   },
   lowercase: {
-    textTransform: 'lowercase'
+    textTransform: "lowercase",
   },
   bold: {
     fontWeight: theme.typography.fontWeightBold,
@@ -275,68 +335,68 @@ export const useText = makeStyles(theme => ({
   },
   regular: {
     fontWeight: theme.typography.fontWeightRegular,
-  }
+  },
 }));
 
-export const useHidden = makeStyles(theme => ({
+export const useHidden = makeStyles((theme) => ({
   lgDown: {
-    [theme.breakpoints.down('lg')]: {
-      display: 'none'
-    }
+    [theme.breakpoints.down("lg")]: {
+      display: "none",
+    },
   },
   mdDown: {
-    [theme.breakpoints.down('md')]: {
-      display: 'none'
-    }
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   smDown: {
-    [theme.breakpoints.down('sm')]: {
-      display: 'none'
-    }
+    [theme.breakpoints.down("sm")]: {
+      display: "none",
+    },
   },
   xsDown: {
-    [theme.breakpoints.down('xs')]: {
-      display: 'none'
-    }
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
   lgUp: {
-    [theme.breakpoints.up('lg')]: {
-      display: 'none'
-    }
+    [theme.breakpoints.up("lg")]: {
+      display: "none",
+    },
   },
   mdUp: {
-    [theme.breakpoints.up('md')]: {
-      display: 'none'
-    }
+    [theme.breakpoints.up("md")]: {
+      display: "none",
+    },
   },
   smUp: {
-    [theme.breakpoints.up('sm')]: {
-      display: 'none'
-    }
-  }
+    [theme.breakpoints.up("sm")]: {
+      display: "none",
+    },
+  },
 }));
 
 export const useFlexBox = makeStyles(() => ({
   justifyStart: {
-    justifyContent: 'flex-star'
+    justifyContent: "flex-star",
   },
   justifyCenter: {
-    justifyContent: 'center'
+    justifyContent: "center",
   },
   justifyEnd: {
-    justifyContent: 'flex-end'
+    justifyContent: "flex-end",
   },
   alignStart: {
-    alignItems: 'flex-star'
+    alignItems: "flex-star",
   },
   alignCenter: {
-    alignItems: 'center'
+    alignItems: "center",
   },
   alignEnd: {
-    alignItems: 'flex-end'
+    alignItems: "flex-end",
   },
 }));
 
-export const useFlipRtl = makeStyles(theme => ({
-  transform: theme.direction === 'rtl' ? 'scale(-1)' : 'none'
+export const useFlipRtl = makeStyles((theme) => ({
+  transform: theme.direction === "rtl" ? "scale(-1)" : "none",
 }));
