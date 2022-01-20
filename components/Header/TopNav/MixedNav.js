@@ -1,48 +1,38 @@
-import React, {
-  useState,
-  useRef,
-  useEffect
-} from 'react';
-import PropTypes from 'prop-types';
-import Container from '@material-ui/core/Container';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import AnchorLink from 'react-anchor-link-smooth-scroll';
-import ClickAwayListener from '@material-ui/core/ClickAwayListener';
-import Fade from '@material-ui/core/Fade';
-import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
-import Scrollspy from 'react-scrollspy';
-import { withTranslation, i18n } from '~/i18n';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListSubheader from '@material-ui/core/ListSubheader';
-import Icon from '@material-ui/core/Icon';
-import useStyles from '../header-style';
-import navMenu from '../data/single';
+import React, { useState, useRef, useEffect } from "react";
+import PropTypes from "prop-types";
+import Container from "@material-ui/core/Container";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import AnchorLink from "react-anchor-link-smooth-scroll";
+import ClickAwayListener from "@material-ui/core/ClickAwayListener";
+import Fade from "@material-ui/core/Fade";
+import Paper from "@material-ui/core/Paper";
+import Popper from "@material-ui/core/Popper";
+import Scrollspy from "react-scrollspy";
+import { withTranslation, i18n } from "~/i18n";
+import List from "@material-ui/core/List";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import ListSubheader from "@material-ui/core/ListSubheader";
+import Icon from "@material-ui/core/Icon";
+import useStyles from "../header-style";
+import navMenu from "../data/single";
 
-const LinkBtn = React.forwardRef(function LinkBtn(props, ref) { // eslint-disable-line
+const LinkBtn = React.forwardRef(function LinkBtn(props, ref) {
+  // eslint-disable-line
   return <AnchorLink to={props.to} {...props} innerRef={ref} />; // eslint-disable-line
 });
 
 function MixedNav(props) {
-  const {
-    menuPrimary,
-    menuSecondary,
-    open,
-    toggle,
-    close,
-    singleNav,
-    t
-  } = props;
+  const { menuPrimary, menuSecondary, open, toggle, close, singleNav, t } =
+    props;
   const classes = useStyles();
 
   const anchorRef = useRef(null);
   const [anchorEl, setAnchorEl] = useState(null);
-  const [curURL, setCurURL] = useState('');
-  const [curOrigin, setCurOrigin] = useState('');
-  const [langPath, setLangPath] = useState('');
+  const [curURL, setCurURL] = useState("");
+  const [curOrigin, setCurOrigin] = useState("");
+  const [langPath, setLangPath] = useState("");
 
   const handleToggle = (event) => {
     setAnchorEl(event.currentTarget);
@@ -52,7 +42,7 @@ function MixedNav(props) {
   useEffect(() => {
     setCurURL(window.location.href);
     setCurOrigin(window.location.origin);
-    setLangPath('/' + i18n.options.localeSubpaths[i18n.language]);
+    setLangPath("/" + i18n.options.localeSubpaths[i18n.language]);
   }, []);
 
   return (
@@ -61,20 +51,20 @@ function MixedNav(props) {
       currentClassName="active"
       className={classes.scrollActiveNav}
     >
-      {menuPrimary.map(item => (
+      {/* {menuPrimary.map((item) => (
         <li key={item.id.toString()}>
           {singleNav ? (
             <Button component={AnchorLink} href={item.url}>
-              {t('crypto-landing:header_' + item.name)}
+              {t("crypto-landing:header_" + item.name)}
             </Button>
           ) : (
-            <Button href={'/' + item.url}>
-              {t('crypto-landing:header_' + item.name)}
+            <Button href={"/" + item.url}>
+              {t("crypto-landing:header_" + item.name)}
             </Button>
           )}
         </li>
-      ))}
-      <li>
+      ))} */}
+      {/* <li>
         <Button
           onClick={(e) => handleToggle(e)}
           ref={anchorRef}
@@ -132,7 +122,7 @@ function MixedNav(props) {
             </Fade>
           )}
         </Popper>
-      </li>
+      </li> */}
     </Scrollspy>
   );
 }
@@ -144,15 +134,15 @@ MixedNav.propTypes = {
   toggle: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
   singleNav: PropTypes.bool,
-  t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired,
 };
 
 MixedNav.defaultProps = {
-  singleNav: false
+  singleNav: false,
 };
 
 MixedNav.getInitialProps = async () => ({
-  namespacesRequired: ['common', 'crypto-landing'],
+  namespacesRequired: ["common", "crypto-landing"],
 });
 
-export default withTranslation(['common', 'crypto-landing'])(MixedNav);
+export default withTranslation(["common", "crypto-landing"])(MixedNav);

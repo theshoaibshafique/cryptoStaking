@@ -1,52 +1,53 @@
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   logo: {
     fontWeight: theme.typography.fontWeightBold,
     color: theme.palette.text.primary,
-    display: 'flex',
+    display: "flex",
   },
   landscape: {
-    alignItems: 'center',
-    position: 'relative',
+    alignItems: "center",
+    position: "relative",
     top: -2,
-    '& img': {
-      marginRight: theme.spacing(1)
-    }
+    "& img": {
+      marginRight: theme.spacing(1),
+    },
   },
   portrait: {
-    display: 'block',
-    margin: '0 auto 8px',
-    '& img': {
+    display: "block",
+    margin: "0 auto 8px",
+    "& img": {
       margin: `0 auto ${theme.spacing(1)}`,
-      display: 'block'
-    }
+      display: "block",
+    },
   },
   small: {
     fontSize: 16,
-    '& img': {
+    "& img": {
       maxWidth: 34,
-      height: 34
-    }
+      height: 34,
+    },
   },
   medium: {
     fontSize: 18,
-    '& img': {
+    "& img": {
       maxWidth: 54,
       height: 54,
-      [theme.breakpoints.down('xs')]: {
+      [theme.breakpoints.down("xs")]: {
         maxWidth: 34,
-        height: 34
-      }
-    }
+        height: 34,
+      },
+    },
   },
   large: {
     fontSize: 28,
-    '& img': {
-      maxWidth: 54,
-      height: 54
-    }
-  }
+    "& img": {
+      width: 200,
+      // maxWidth: 54,
+      // height: 54
+    },
+  },
 }));
 
 export default useStyles;

@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import logo from '~/public/images/logo-crypto.svg';
-import brand from '~/public/text/brand';
-import useStyles from './logo-style';
+import React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import logo from "~/public/images/smart-logo.svg";
+import brand from "~/public/text/brand";
+import useStyles from "./logo-style";
 
 function Logo(props) {
   const classes = useStyles();
@@ -11,18 +11,18 @@ function Logo(props) {
   return (
     <span className={clsx(classes[type], classes.logo, classes[size])}>
       <img src={logo} alt="logo" />
-      { type !== 'only' ? brand.crypto.name : '' }
+      {/* {type !== "only" ? brand.crypto.name : ""} */}
     </span>
   );
 }
 
 Logo.propTypes = {
   type: PropTypes.string.isRequired,
-  size: PropTypes.string
+  size: PropTypes.string,
 };
 
 Logo.defaultProps = {
-  size: 'medium'
+  size: "medium",
 };
 
 export default Logo;

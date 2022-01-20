@@ -1,29 +1,29 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { i18n, withTranslation } from '~/i18n';
-import SwipeableDrawer from '@material-ui/core/SwipeableDrawer';
-import List from '@material-ui/core/List';
-import Divider from '@material-ui/core/Divider';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemText from '@material-ui/core/ListItemText';
-import link from '~/public/text/link';
-import useStyles from '../sidenav-style';
-import navMenu from '../data/single';
+import React, { useState, useEffect } from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import { i18n, withTranslation } from "~/i18n";
+import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
+import List from "@material-ui/core/List";
+import Divider from "@material-ui/core/Divider";
+import ListItem from "@material-ui/core/ListItem";
+import ListItemText from "@material-ui/core/ListItemText";
+import link from "~/public/text/link";
+import useStyles from "../sidenav-style";
+import navMenu from "../data/single";
 
 function SingleNavMobile(props) {
   const classes = useStyles();
   const { toggleDrawer, open } = props;
   const { t } = props;
 
-  const [curURL, setCurURL] = useState('');
-  const [curOrigin, setCurOrigin] = useState('');
-  const [langPath, setLangPath] = useState('');
+  const [curURL, setCurURL] = useState("");
+  const [curOrigin, setCurOrigin] = useState("");
+  const [langPath, setLangPath] = useState("");
 
   useEffect(() => {
     setCurURL(window.location.href);
     setCurOrigin(window.location.origin);
-    setLangPath('/' + i18n.options.localeSubpaths[i18n.language]);
+    setLangPath("/" + i18n.options.localeSubpaths[i18n.language]);
   }, []);
 
   const SideList = () => (
@@ -49,15 +49,23 @@ function SingleNavMobile(props) {
         </List>
         <Divider />
         <List className={classes.userMenu}>
-          {['login', 'register'].map((text, index) => (
+          {["login", "register"].map((text, index) => (
             <ListItem
               key={index.toString()}
-              className={clsx(classes.noChild, curURL === curOrigin + langPath + '/' + text ? classes.current : '')}
+              className={clsx(
+                classes.noChild,
+                curURL === curOrigin + langPath + "/" + text
+                  ? classes.current
+                  : ""
+              )}
               component="a"
               href={link.crypto[text]}
               button
             >
-              <ListItemText className={classes.menuList} primary={t('common:' + text)} />
+              <ListItemText
+                className={classes.menuList}
+                primary={t("common:" + text)}
+              />
             </ListItem>
           ))}
         </List>
@@ -71,7 +79,7 @@ function SingleNavMobile(props) {
       onClose={toggleDrawer}
       onOpen={toggleDrawer}
       classes={{
-        paper: classes.paperNav
+        paper: classes.paperNav,
       }}
     >
       <SideList />
@@ -79,15 +87,14 @@ function SingleNavMobile(props) {
   );
 }
 
-
 SingleNavMobile.propTypes = {
   toggleDrawer: PropTypes.func.isRequired,
   open: PropTypes.bool.isRequired,
-  t: PropTypes.func.isRequired
+  t: PropTypes.func.isRequired,
 };
 
 SingleNavMobile.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
+  namespacesRequired: ["common"],
 });
 
-export default withTranslation(['common'])(SingleNavMobile);
+export default withTranslation(["common"])(SingleNavMobile);

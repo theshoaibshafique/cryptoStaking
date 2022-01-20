@@ -1,18 +1,15 @@
-import React from 'react';
-import { Head } from 'next/document';
-import theme from '../theme/palette';
-import brand from '../public/text/brand';
+import React from "react";
+import { Head } from "next/document";
+import theme from "../theme/palette";
+import brand from "../public/text/brand";
 
 const HeadComponent = () => (
   <Head>
     {/* Use minimum-scale=1 to enable GPU rasterization */}
-    <meta
-      name="description"
-      content={brand.crypto.desc}
-    />
+    <meta name="description" content={brand.crypto.desc} />
     {/* Favicon */}
-    <link rel="shortcut icon" href="/favicons/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />
+    <link rel="shortcut icon" href="/favicons/smart-favicon.ico" />
+    {/* <link rel="apple-touch-icon" sizes="57x57" href="/favicons/apple-icon-57x57.png" />
     <link rel="apple-touch-icon" sizes="60x60" href="/favicons/apple-icon-60x60.png" />
     <link rel="apple-touch-icon" sizes="72x72" href="/favicons/apple-icon-72x72.png" />
     <link rel="apple-touch-icon" sizes="76x76" href="/favicons/apple-icon-76x76.png" />
@@ -25,17 +22,26 @@ const HeadComponent = () => (
     <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="96x96" href="/favicons/favicon-96x96.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
-    <link rel="manifest" href="/favicons/manifest.json" />
+    <link rel="manifest" href="/favicons/manifest.json" /> */}
     <meta name="msapplication-TileColor" content="#ffffff" />
-    <meta name="msapplication-TileImage" content="/favicons/ms-icon-144x144.png" />
+    <meta
+      name="msapplication-TileImage"
+      content="/favicons/ms-icon-144x144.png"
+    />
     {/* PWA primary color */}
     <meta name="theme-color" content={theme.coinz.palette.primary.main} />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600&display=swap"
     />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-    <link href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      rel="stylesheet"
+    />
     {/*  Facebook */}
     <meta property="author" content="oiron" />
     <meta property="og:site_name" content="oiron.indisains.com" />
@@ -49,10 +55,7 @@ const HeadComponent = () => (
     <meta property="twitter:image:src" content="/images/logo-crypto.png" />
     <meta property="og:url" content={brand.crypto.url} />
     <meta property="og:title" content={brand.crypto.name} />
-    <meta
-      property="og:description"
-      content={brand.crypto.desc}
-    />
+    <meta property="og:description" content={brand.crypto.desc} />
     <meta name="twitter:site" content={brand.crypto.url} />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content={brand.crypto.img} />
