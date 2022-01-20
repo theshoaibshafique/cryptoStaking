@@ -101,12 +101,14 @@ function BannerSlider(props) {
                                 size="large"
                                 variant="contained"
                                 color="primary"
-                                href={link.crypto.register}
+                                href="#delegate"
                                 className={classes.button}
                                 endIcon={<ArrowForwardIcon />}
+                                href="#delegate"
                               >
                                 Stake Now
                               </Button>
+
                               <Button
                                 size="large"
                                 variant="outlined"
