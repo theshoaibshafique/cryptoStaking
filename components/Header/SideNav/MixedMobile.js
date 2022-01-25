@@ -91,11 +91,8 @@ function MixedMobile(props) {
         paper: classes.paperNav,
       }}
     >
-      {/* <div
-        className={classes.mobileNav}
-        role="presentation"
-      >
-        <div className={open ? classes.menuOpen : ''}>
+      <div className={classes.mobileNav} role="presentation">
+        <div className={open ? classes.menuOpen : ""}>
           <List component="nav" className={classes.sideSinglelv}>
             {navMenu.map((item, index) => (
               <ListItem
@@ -112,30 +109,41 @@ function MixedMobile(props) {
             ))}
             <ListItem
               button
-              className={expand.samplePage ? classes.currentParent : ''}
-              onClick={() => handleToggle('samplePage')}
+              className={expand.samplePage ? classes.currentParent : ""}
+              onClick={() => handleToggle("samplePage")}
             >
-              <ListItemText className={classes.menuList} primary={t('common:header_sample_page')} />
+              <ListItemText
+                className={classes.menuList}
+                primary={t("common:header_sample_page")}
+              />
               {expand.samplePage ? <ExpandLess /> : <ExpandMore />}
             </ListItem>
-            { childMenu(expand, navPage) }
+            {childMenu(expand, navPage)}
           </List>
           <Divider />
           <List className={classes.userMenu}>
-            {['login', 'register'].map((text, index) => (
+            {["Dashboard"].map((text, index) => (
               <ListItem
                 key={index.toString()}
-                className={clsx(classes.noChild, curURL === curOrigin + langPath + '/' + text ? classes.current : '')}
+                className={clsx(
+                  classes.noChild,
+                  curURL === curOrigin + langPath + "/" + text
+                    ? classes.current
+                    : ""
+                )}
                 component="a"
                 href={link.crypto[text]}
                 button
               >
-                <ListItemText className={classes.menuList} primary={t('common:' + text)} />
+                <ListItemText
+                  className={classes.menuList}
+                  primary={t("common:" + text)}
+                />
               </ListItem>
             ))}
           </List>
         </div>
-      </div> */}
+      </div>
     </SwipeableDrawer>
   );
 }

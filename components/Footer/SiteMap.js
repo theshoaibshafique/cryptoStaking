@@ -22,6 +22,7 @@ import logo from "~/public/images/smart-logo.svg";
 import brand from "~/public/text/brand";
 import { useTextAlign } from "~/theme/common";
 import useStyles from "./sitemap-style";
+import BookIcon from "@material-ui/icons/Book";
 
 function Copyright() {
   return (
@@ -38,26 +39,26 @@ const footers = [
     description: ["Team", "History", "Contact us", "Locations"],
     link: ["#team", "#history", "#contact-us", "#locations"],
   },
-  {
-    title: "Resources",
-    description: [
-      "Resource",
-      "Resource name",
-      "Another resource",
-      "Final resource",
-    ],
-    link: [
-      "#resource",
-      "#resource-name",
-      "#another-resource",
-      "#final-resource",
-    ],
-  },
-  {
-    title: "Legal",
-    description: ["Privacy policy", "Terms of use"],
-    link: ["#privacy-policy", "#terms-of-use"],
-  },
+  // {
+  //   title: "Resources",
+  //   description: [
+  //     "Resource",
+  //     "Resource name",
+  //     "Another resource",
+  //     "Final resource",
+  //   ],
+  //   link: [
+  //     "#resource",
+  //     "#resource-name",
+  //     "#another-resource",
+  //     "#final-resource",
+  //   ],
+  // },
+  // {
+  //   title: "Legal",
+  //   description: ["Privacy policy", "Terms of use"],
+  //   link: ["#privacy-policy", "#terms-of-use"],
+  // },
 ];
 
 function Footer(props) {
@@ -189,16 +190,19 @@ function Footer(props) {
               <i className="ion-social-twitter" />
             </IconButton>
             <IconButton aria-label="TW" className={classes.margin} size="small">
-              <i className="ion-social-facebook" />
+              <i className="ion-social-reddit" />
             </IconButton>
             <IconButton aria-label="IG" className={classes.margin} size="small">
               <i className="ion-social-instagram" />
             </IconButton>
             <IconButton aria-label="LI" className={classes.margin} size="small">
-              <i className="ion-social-linkedin" />
+              <i className="ion-social-github" />
+            </IconButton>
+            <IconButton aria-label="LI" className={classes.margin} size="small">
+              <i className="ion-ios-bookmarks" />
             </IconButton>
           </div>
-          <Select
+          {/* <Select
             value={values.lang}
             onChange={handleChange}
             MenuProps={{
@@ -224,7 +228,7 @@ function Footer(props) {
             <MenuItem value="ind">Bahasa Indonesia</MenuItem>
             <MenuItem value="prt">Português</MenuItem>
             <MenuItem value="zho">简体中文</MenuItem>
-          </Select>
+          </Select> */}
         </Grid>
       </Grid>
       {isMobile && (

@@ -42,6 +42,7 @@ const HeadComponent = () => (
       href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
       rel="stylesheet"
     />
+
     {/*  Facebook */}
     <meta property="author" content="oiron" />
     <meta property="og:site_name" content="oiron.indisains.com" />
