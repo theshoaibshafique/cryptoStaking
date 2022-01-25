@@ -71,7 +71,7 @@ function MyApp(props) {
       theme.palette.type === "light" ? "dark" : "light"
     );
     setTheme({
-      ...appTheme("coinz", newPaletteType),
+      ...appTheme("joker", newPaletteType),
       direction: theme.direction,
     });
   };

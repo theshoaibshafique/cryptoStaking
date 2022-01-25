@@ -24,6 +24,7 @@ import Footer from "../components/Footer";
 import FooterExtend from "../components/Footer/FooterExtend";
 import Notification from "../components/Notification";
 import brand from "../public/text/brand";
+import Faq from "../components/Faq";
 
 function Landing(props) {
   // Theme breakpoints
@@ -66,7 +67,9 @@ function Landing(props) {
           <section id="delegate" className={classes.spaceTop}>
             <Stake />
           </section>
-          <section className={classes.spaceTop}></section>
+          <section className={classes.spaceTop}>
+            <Faq />
+          </section>
           {/* <section id="view-market" className={classes.spaceTop}>
             <TopCoin />
           </section>
