@@ -17,6 +17,7 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import useStyles from "../header-style";
 import { i18n, withTranslation } from "~/i18n";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 let themeType = "light";
 if (typeof Storage !== "undefined") {
@@ -66,7 +67,7 @@ function Settings(props) {
         onClick={handleClick}
         className={clsx(classes.icon, open ? classes.active : "")}
       >
-        <SettingsIcon fontSize="inherit" />
+        <Brightness4Icon fontSize="inherit" />
       </IconButton>
       <Popover
         id={id}

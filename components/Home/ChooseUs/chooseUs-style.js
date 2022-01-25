@@ -16,7 +16,7 @@ const chooseUsStyles = makeStyles((theme) => ({
   },
   paper: {
     position: "relative",
-    //height: 174,
+    height: 320,
 
     padding: theme.spacing(2),
     margin: theme.spacing(1, 0),
@@ -24,10 +24,14 @@ const chooseUsStyles = makeStyles((theme) => ({
       padding: theme.spacing(1, 3),
       margin: theme.spacing(4, 0, 0, 0),
       width: 250,
+      height: 274,
     },
     "& span": {
       color: theme.palette.primary.main,
       fontSize: 88,
+      [theme.breakpoints.down("md")]: {
+        fontSize: 68,
+      },
     },
     "& h6": {
       fontWeight: theme.typography.fontWeightBold,
