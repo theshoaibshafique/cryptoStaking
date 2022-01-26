@@ -45,12 +45,34 @@ function MixedNav(props) {
     setLangPath("/" + i18n.options.localeSubpaths[i18n.language]);
   }, []);
 
+  const menuData = ["home", "choose", "delegate", "faq"];
+
   return (
     <Scrollspy
-      items={navMenu}
+      items={menuData}
       currentClassName="active"
       className={classes.scrollActiveNav}
     >
+      <li>
+        <Button component={AnchorLink} href="#home">
+          Home
+        </Button>
+      </li>
+      <li>
+        <Button component={AnchorLink} href="#choose">
+          Why us?
+        </Button>
+      </li>
+      <li>
+        <Button component={AnchorLink} href="#delegate">
+          Delegate
+        </Button>
+      </li>
+      <li>
+        <Button component={AnchorLink} href="#faq">
+          FAQ
+        </Button>
+      </li>
       {/* {menuPrimary.map((item) => (
         <li key={item.id.toString()}>
           {singleNav ? (

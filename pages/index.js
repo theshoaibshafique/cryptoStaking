@@ -67,7 +67,7 @@ function Landing(props) {
           <section id="delegate" className={classes.spaceTop}>
             <Stake />
           </section>
-          <section className={classes.spaceTop}>
+          <section id="faq" className={classes.spaceTop}>
             <Faq />
           </section>
           {/* <section id="view-market" className={classes.spaceTop}>

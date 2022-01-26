@@ -114,7 +114,7 @@ function BannerSlider(props) {
                                 variant="outlined"
                                 component={AnchorLink}
                                 color="primary"
-                                href="#view-market"
+                                href="#faq"
                                 className={classes.button}
                                 endIcon={<ArrowForwardIcon />}
                               >
