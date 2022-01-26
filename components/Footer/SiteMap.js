@@ -36,8 +36,8 @@ function Copyright() {
 const footers = [
   {
     title: "Company",
-    description: ["Team", "History", "Contact us", "Locations"],
-    link: ["#team", "#history", "#contact-us", "#locations"],
+    description: ["Home", "Why Us?", "Delegate", "Faq"],
+    link: ["#home", "#choose", "#delegate", "#faq"],
   },
   // {
   //   title: "Resources",
@@ -54,11 +54,11 @@ const footers = [
   //     "#final-resource",
   //   ],
   // },
-  // {
-  //   title: "Legal",
-  //   description: ["Privacy policy", "Terms of use"],
-  //   link: ["#privacy-policy", "#terms-of-use"],
-  // },
+  {
+    title: "Legal",
+    description: ["Privacy policy", "Terms of use"],
+    link: ["#privacy-policy", "#terms-of-use"],
+  },
 ];
 
 function Footer(props) {
@@ -186,21 +186,71 @@ function Footer(props) {
         </Grid>
         <Grid item xs={12} md={3}>
           <div className={classes.socmed}>
-            <IconButton aria-label="FB" className={classes.margin} size="small">
-              <i className="ion-social-twitter" />
-            </IconButton>
-            <IconButton aria-label="TW" className={classes.margin} size="small">
-              <i className="ion-social-reddit" />
-            </IconButton>
-            <IconButton aria-label="IG" className={classes.margin} size="small">
-              <i className="ion-social-instagram" />
-            </IconButton>
-            <IconButton aria-label="LI" className={classes.margin} size="small">
-              <i className="ion-social-github" />
-            </IconButton>
-            <IconButton aria-label="LI" className={classes.margin} size="small">
-              <i className="ion-ios-bookmarks" />
-            </IconButton>
+            <a
+              href="https://twitter.com/nodes_smart?s=20"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconButton
+                aria-label="FB"
+                className={classes.margin}
+                size="small"
+              >
+                <i className="ion-social-twitter" />
+              </IconButton>
+            </a>
+            <a
+              href="https://www.reddit.com/r/smart_nodes/?utm_medium=android_app&utm_source=share"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconButton
+                aria-label="TW"
+                className={classes.margin}
+                size="small"
+              >
+                <i className="ion-social-reddit" />
+              </IconButton>
+            </a>
+            <a
+              href="https://www.instagram.com/smartnodes_validator/?utm_medium=copy_link"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconButton
+                aria-label="IG"
+                className={classes.margin}
+                size="small"
+              >
+                <i className="ion-social-instagram" />
+              </IconButton>
+            </a>
+            <a
+              href="https://github.com/Smart-Nodes"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconButton
+                aria-label="LI"
+                className={classes.margin}
+                size="small"
+              >
+                <i className="ion-social-github" />
+              </IconButton>
+            </a>
+            <a
+              href="https://medium.com/@smartnodes"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconButton
+                aria-label="LI"
+                className={classes.margin}
+                size="small"
+              >
+                <i className="ion-ios-bookmarks" />
+              </IconButton>
+            </a>
           </div>
           {/* <Select
             value={values.lang}
