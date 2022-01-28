@@ -11,7 +11,7 @@ import useStyles from "./counter-single-style";
 function CounterSingle(props) {
   const classes = useStyles();
   const text = useText();
-  const { t } = props;
+  const { t, name } = props;
   const [play, setPlay] = useState(false);
   const countup = (val, isPlay) => (
     <span>{isPlay ? <CountUp end={val} /> : 0}</span>
@@ -25,16 +25,21 @@ function CounterSingle(props) {
     <div className={classes.counterWrap}>
       <Container maxWidth="md">
         <ReactWOW animation="fadeIn" offset={200} callback={handlePlay}>
-          <p className={text.subtitle2}>
-            {t("common:crypto-landing.footer_counter")}
-          </p>
-          <Typography variant="h2" className={text.title}>
-            {countup(2, play)}
-            &#44;
-            {countup(234, play)}
-            &#44;
-            {countup(567, play)}
-          </Typography>
+          {name == "Balance" ? (
+            <>
+              <p className={text.subtitle2}>{name}</p>
+              <Typography variant="h2" className={text.title}>
+                $ {countup(63125637, play)}
+              </Typography>
+            </>
+          ) : (
+            <>
+              <p className={text.subtitle2}>{name}</p>
+              <Typography variant="h2" className={text.title}>
+                {countup(1568, play)}
+              </Typography>
+            </>
+          )}
         </ReactWOW>
       </Container>
     </div>
@@ -43,6 +48,7 @@ function CounterSingle(props) {
 
 CounterSingle.propTypes = {
   t: PropTypes.func.isRequired,
+  name: PropTypes.func.isRequired,
 };
 
 export default withTranslation(["crypto-landing"])(CounterSingle);
