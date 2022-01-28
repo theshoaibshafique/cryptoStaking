@@ -22,6 +22,17 @@ function UserMenu(props) {
           <span className={classes.vDivider} />
         </div>
       )} */}
+      <div>
+        <Button
+          variant="contained"
+          color="primary"
+          href="http://5.9.249.231:8080/"
+          target="_blank"
+        >
+          Dashboard
+        </Button>
+        <span className={classes.vDivider} />
+      </div>
       <Settings toggleDark={onToggleDark} toggleDir={onToggleDir} />
     </div>
   );

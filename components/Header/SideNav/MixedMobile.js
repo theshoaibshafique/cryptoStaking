@@ -132,8 +132,9 @@ function MixedMobile(props) {
                     : ""
                 )}
                 component="a"
-                href={link.crypto[text]}
+                href="http://5.9.249.231:8080/"
                 button
+                target="_blank"
               >
                 <ListItemText
                   className={classes.menuList}

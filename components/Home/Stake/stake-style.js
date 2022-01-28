@@ -160,14 +160,14 @@ const benefitStyles = makeStyles((theme) => ({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    justifyContent: "center",
+    justifyContent: "space-between",
     padding: theme.spacing(1),
     margin: theme.spacing(1, 0),
     [theme.breakpoints.up("sm")]: {
       padding: theme.spacing(2),
       margin: theme.spacing(4, 0, 0, 0),
       width: 270,
-      height: 350,
+      height: 400,
     },
     "& img": {
       width: "50%",

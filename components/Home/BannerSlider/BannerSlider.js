@@ -232,19 +232,19 @@ function BannerSlider(props) {
           <Hidden smDown>
             <Container>
               <nav className={classes.slideNav}>
-                <CounterSingle />
+                <CounterSingle name="Balance" />
                 <Divider
                   className={classes.divider}
                   orientation="vertical"
                   flexItem
                 />
-                <CounterSingle />
-                <Divider
+                <CounterSingle name="Users" />
+                {/* <Divider
                   className={classes.divider}
                   orientation="vertical"
                   flexItem
-                />
-                <CounterSingle />
+                /> */}
+                {/* <CounterSingle /> */}
               </nav>
             </Container>
           </Hidden>
