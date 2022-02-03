@@ -88,13 +88,15 @@ function BannerSlider(props) {
                         <Box px={{ lg: 3 }} alignItems="center">
                           <div className={classes.text}>
                             <div className={classes.title}>
-                              <h2 className={text.title}>
-                                Non-Custodial Staking Platform
+                              <h2 className={text.title2}>
+                                Your gateway to decentralized networks
                               </h2>
                             </div>
                             <h5 className={text.subtitle2}>
-                              Earn rewards by securing Proof of Stake
-                              blockchains
+                              SmartNodes supports proof-of-stake blockchains by
+                              providing enterprise grade validator services. Get
+                              rewarded by staking your crypto assets with us.
+                              Its fast, its easy, its secure.
                             </h5>
                             <div className={classes.btnArea}>
                               <Button

@@ -16,22 +16,22 @@ const ChooseUs = () => {
     {
       icon: "ion-lock-combination",
       title: "Security",
-      text: "We run multiple servers with enterprise-grade protection(against (Layer3 and 4 DDoS attacks).",
+      text: "We use a multilayer security set up relying on private connectivities and public sentry nodes to mitigate any network attacks while maintaining continued backups and failsafe measures to optimize uptime. We use a mix of software and hardware key management solutions, 24/7 monitoring, and well-designed internal protocols to insure a highly secured architecture.",
     },
     {
-      icon: "ion-help-buoy",
-      title: "Support",
-      text: "Supporting crypto projects from the start, from deploying nodes to bootstrapping communities.",
+      icon: "ion-ios-world-outline",
+      title: "Infrastructure",
+      text: "We use enterprise grade dell servers globally distributed across state-of-the-art and environmentally friendly data centers.",
     },
     {
       icon: "ion-ios-people",
-      title: "Commnity",
-      text: "We are very active in the community and always willing to lend a hand in time of need.  The Crypto Space is large and fast, please never feel alone.",
+      title: "Community",
+      text: "SmartNodes is highly rooted in the cosmos community. We are active across all our supported networks and strive to be a positive force within each ecosystem. We are highly available throughout our platform as well as our partners platforms and social media. We are committed to contribute and give back to the ecosystem systems and the communities we adhere to. ",
     },
     {
       icon: "ion-android-lock",
-      title: "Insurance",
-      text: "The Smart Nodes Staking Insurance Fund is designed to cover staking losses in case of an accident caused by Smart Nodes.",
+      title: "100% Slashing insurance",
+      text: "We offer all our delegators a protection of their funds in case of any slashing event due to downtime or technical difficulties resulting in missed blocks and rewards. Never lose any funds or miss out on any rewards due to uptime slashing.",
     },
   ];
   return (

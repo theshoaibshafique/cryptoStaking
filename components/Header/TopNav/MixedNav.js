@@ -17,6 +17,7 @@ import ListSubheader from "@material-ui/core/ListSubheader";
 import Icon from "@material-ui/core/Icon";
 import useStyles from "../header-style";
 import navMenu from "../data/single";
+import { useRouter } from "next/router";
 
 const LinkBtn = React.forwardRef(function LinkBtn(props, ref) {
   // eslint-disable-line
@@ -33,6 +34,7 @@ function MixedNav(props) {
   const [curURL, setCurURL] = useState("");
   const [curOrigin, setCurOrigin] = useState("");
   const [langPath, setLangPath] = useState("");
+  const router = useRouter();
 
   const handleToggle = (event) => {
     setAnchorEl(event.currentTarget);
@@ -54,24 +56,19 @@ function MixedNav(props) {
       className={classes.scrollActiveNav}
     >
       <li>
-        <Button component={AnchorLink} href="#home">
-          Home
-        </Button>
+        <Button onClick={() => router.push("/#home")}>Home</Button>
       </li>
       <li>
-        <Button component={AnchorLink} href="#choose">
-          Why us?
-        </Button>
+        <Button onClick={() => router.push("/#choose")}>Why us?</Button>
       </li>
       <li>
-        <Button component={AnchorLink} href="#delegate">
-          Delegate
-        </Button>
+        <Button onClick={() => router.push("/#delegate")}>Delegate</Button>
       </li>
       <li>
-        <Button component={AnchorLink} href="#faq">
-          FAQ
-        </Button>
+        <Button onClick={() => router.push("/#faq")}>FAQ</Button>
+      </li>
+      <li>
+        <Button onClick={() => router.push("/about")}>About</Button>
       </li>
       {/* {menuPrimary.map((item) => (
         <li key={item.id.toString()}>

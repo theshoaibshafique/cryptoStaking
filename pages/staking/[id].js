@@ -51,6 +51,7 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
   const [coinData, setCoinData] = useState("");
   const [marketData, setMarketData] = useState([]);
   const [coinAmount, setCoinAmount] = useState(1000);
+  const [coinAPR, setCoinAPR] = useState("");
   var chartData = [];
   const coinReward = [
     { symbol: "bcna", value: "30.52", rewardToken: "akash" },
@@ -89,6 +90,18 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
       .then(function (response) {
         // handle success
         setCoinData(response.data);
+        axios
+          .get(
+            `
+      https://firestore.googleapis.com/v1/projects/smartnode-f6334/databases/(default)/documents/apr/${response.data.symbol}`
+          )
+          .then(function (response) {
+            setCoinAPR(response.data.fields.value);
+          })
+          .catch(function (error) {
+            // handle error
+            console.log(error);
+          });
       })
       .catch(function (error) {
         // handle error
@@ -302,11 +315,7 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
                       <div className={classes2.chartHeader2}>
                         <span>ANNUALIZED REWARD</span>
                         <span className={classes2.values2}>
-                          {
-                            coinReward.find((x) => x.symbol == coinData.symbol)
-                              ?.value
-                          }{" "}
-                          %
+                          {Object.values(coinAPR)} %
                         </span>
                       </div>
                     </div>
@@ -318,11 +327,7 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
                             <span className={classes2.values}>
                               {(
                                 coinAmount *
-                                (coinReward.find(
-                                  (x) => x.symbol == coinData.symbol
-                                )?.value /
-                                  100 /
-                                  12)
+                                (Object.values(coinAPR) / 100 / 12)
                               )?.toFixed(2)}{" "}
                               {coinData?.symbol?.toUpperCase()}
                             </span>
@@ -335,11 +340,7 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
                               ${" "}
                               {(
                                 coinAmount *
-                                (coinReward.find(
-                                  (x) => x.symbol == coinData.symbol
-                                )?.value /
-                                  100 /
-                                  12) *
+                                (Object.values(coinAPR) / 100 / 12) *
                                 coinData?.market_data?.current_price?.usd
                               )?.toFixed(2)}
                             </span>
@@ -355,10 +356,7 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
                             <span className={classes2.values}>
                               {(
                                 coinAmount *
-                                (coinReward.find(
-                                  (x) => x.symbol == coinData.symbol
-                                )?.value /
-                                  100)
+                                (Object.values(coinAPR) / 100)
                               )?.toFixed(2)}{" "}
                               {coinData?.symbol?.toUpperCase()}
                             </span>
@@ -371,10 +369,7 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
                               ${" "}
                               {(
                                 coinAmount *
-                                (coinReward.find(
-                                  (x) => x.symbol == coinData.symbol
-                                )?.value /
-                                  100) *
+                                (Object.values(coinAPR) / 100) *
                                 coinData?.market_data?.current_price?.usd
                               )?.toFixed(2)}
                             </span>

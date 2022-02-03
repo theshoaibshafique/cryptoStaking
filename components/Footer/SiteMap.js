@@ -36,8 +36,8 @@ function Copyright() {
 const footers = [
   {
     title: "Company",
-    description: ["Home", "Why Us?", "Delegate", "Faq"],
-    link: ["#home", "#choose", "#delegate", "#faq"],
+    description: ["Home", "Why Us?", "Delegate", "Faq", "About"],
+    link: ["#home", "#choose", "#delegate", "#faq", "about"],
   },
   // {
   //   title: "Resources",
@@ -109,7 +109,8 @@ function Footer(props) {
             className={classes.footerDesc}
             gutterBottom
           >
-            {t("common:crypto-landing.banner_subtitle")}
+            SmartNodes is an infrastructure provider for Proof-Of-Stake
+            blockchains and decentralized projects.
           </Typography>
           {isDesktop && <Copyright />}
         </Grid>
