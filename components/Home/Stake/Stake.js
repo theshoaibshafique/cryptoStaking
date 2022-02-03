@@ -104,7 +104,7 @@ function Stake(props) {
     getData();
   }, []);
 
-  console.log(coinAPR);
+  // console.log(coinAPR);
   return (
     <div className={classes.root}>
       <div className={classes.decoBg}>

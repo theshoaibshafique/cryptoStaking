@@ -24,8 +24,6 @@ function CounterSingle(props) {
     }, 1000);
   };
 
-  const temp = 12234;
-
   const getData = async () => {
     await axios
       .get(
@@ -36,7 +34,7 @@ function CounterSingle(props) {
         setData1(response.data.fields.balance.integerValue);
         setData2(response.data.fields.users.integerValue);
 
-        console.log(response.data.fields);
+        // console.log(response.data.fields);
       })
       .catch(function (error) {
         // handle error

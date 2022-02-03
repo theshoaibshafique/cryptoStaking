@@ -56,24 +56,16 @@ function MixedNav(props) {
       className={classes.scrollActiveNav}
     >
       <li>
-        <Button component={AnchorLink} href="#home">
-          Home
-        </Button>
+        <Button onClick={() => router.push("/#home")}>Home</Button>
       </li>
       <li>
-        <Button component={AnchorLink} href="#choose">
-          Why us?
-        </Button>
+        <Button onClick={() => router.push("/#choose")}>Why us?</Button>
       </li>
       <li>
-        <Button component={AnchorLink} href="#delegate">
-          Delegate
-        </Button>
+        <Button onClick={() => router.push("/#delegate")}>Delegate</Button>
       </li>
       <li>
-        <Button component={AnchorLink} href="#faq">
-          FAQ
-        </Button>
+        <Button onClick={() => router.push("/#faq")}>FAQ</Button>
       </li>
       <li>
         <Button onClick={() => router.push("/about")}>About</Button>

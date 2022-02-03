@@ -7,6 +7,7 @@ import { withTranslation } from "~/i18n";
 import Settings from "./Settings";
 import useStyles from "../header-style";
 import link from "~/public/text/link";
+import { Hidden } from "@material-ui/core";
 
 function UserMenu(props) {
   const classes = useStyles();
@@ -22,17 +23,19 @@ function UserMenu(props) {
           <span className={classes.vDivider} />
         </div>
       )} */}
-      <div>
-        <Button
-          variant="contained"
-          color="primary"
-          href="http://5.9.249.231:8080/"
-          target="_blank"
-        >
-          Dashboard
-        </Button>
-        <span className={classes.vDivider} />
-      </div>
+      <Hidden mdDown>
+        <div>
+          <Button
+            variant="contained"
+            color="primary"
+            href="http://5.9.249.231:8080/"
+            target="_blank"
+          >
+            Dashboard
+          </Button>
+          <span className={classes.vDivider} />
+        </div>
+      </Hidden>
       <Settings toggleDark={onToggleDark} toggleDir={onToggleDir} />
     </div>
   );

@@ -93,6 +93,18 @@ export const useSpacing = makeStyles((theme) => ({
       paddingRight: 32,
     },
   },
+  containerGeneral2: {
+    position: "relative",
+    // paddingTop: theme.spacing(4),
+    // marginTop: theme.spacing(7),
+    // marginBottom: theme.spacing(5),
+    paddingLeft: theme.spacing(2),
+    paddingRight: theme.spacing(2),
+    [theme.breakpoints.up("sm")]: {
+      paddingLeft: theme.spacing(20),
+      paddingRight: theme.spacing(20),
+    },
+  },
   containerFront: {
     position: "relative",
     zIndex: 1,
