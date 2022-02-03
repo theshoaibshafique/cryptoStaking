@@ -16,15 +16,15 @@ const chooseUsStyles = makeStyles((theme) => ({
   },
   paper: {
     position: "relative",
-    height: 320,
-
+    height: 400,
+    overflow: "hidden",
     padding: theme.spacing(2),
     margin: theme.spacing(1, 0),
     [theme.breakpoints.up("sm")]: {
       padding: theme.spacing(1, 3),
       margin: theme.spacing(4, 0, 0, 0),
-      width: 250,
-      height: 274,
+      width: 300,
+      height: 400,
     },
     "& span": {
       color: theme.palette.primary.main,
@@ -38,8 +38,10 @@ const chooseUsStyles = makeStyles((theme) => ({
     },
     "& p": {
       fontSize: "13px",
+      textAlign: "justify",
+      marginTop: "10px",
       [theme.breakpoints.down("xs")]: {
-        fontSize: "13px",
+        fontSize: "11px",
       },
     },
   },

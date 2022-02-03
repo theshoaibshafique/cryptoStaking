@@ -1,22 +1,22 @@
-import React, { Fragment } from 'react';
-import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Head from 'next/head';
-import Container from '@material-ui/core/Container';
-import Grid from '@material-ui/core/Grid';
-import imgAPI from '~/public/images/imgAPI';
-import { useSpacing } from '../../theme/common';
-import Header from '../../components/Header';
-import Counter from '../../components/Counter';
-import Banner from '../../components/About/Banner';
-import PhotoSlider from '../../components/About/PhotoSlider';
-import TeamSlider from '../../components/About/TeamSlider';
-import AboutVideo from '../../components/About/Video';
-import AboutProgress from '../../components/About/Progress';
-import CompanyLogo from '../../components/CompanyLogo';
-import Footer from '../../components/Footer';
-import FooterExtend from '../../components/Footer/FooterExtend';
-import brand from '../../public/text/brand';
+import React, { Fragment } from "react";
+import PropTypes from "prop-types";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import Head from "next/head";
+import Container from "@material-ui/core/Container";
+import Grid from "@material-ui/core/Grid";
+import imgAPI from "~/public/images/imgAPI";
+import { useSpacing } from "../../theme/common";
+import Header from "../../components/Header";
+import Counter from "../../components/Counter";
+import Banner from "../../components/About/Banner";
+import PhotoSlider from "../../components/About/PhotoSlider";
+import TeamSlider from "../../components/About/TeamSlider";
+import AboutVideo from "../../components/About/Video";
+import AboutProgress from "../../components/About/Progress";
+import CompanyLogo from "../../components/CompanyLogo";
+import Footer from "../../components/Footer";
+import FooterExtend from "../../components/Footer/FooterExtend";
+import brand from "../../public/text/brand";
 
 function About(props) {
   const classes = useSpacing();
@@ -25,17 +25,14 @@ function About(props) {
     <Fragment>
       <Head>
         <title>
-          { brand.crypto.name }
+          {brand.crypto.name}
           &nbsp; - About
         </title>
       </Head>
       <CssBaseline />
       <section id="home" />
       <div className={classes.mainWrap}>
-        <Header
-          onToggleDark={onToggleDark}
-          onToggleDir={onToggleDir}
-        />
+        <Header onToggleDark={onToggleDark} onToggleDir={onToggleDir} />
         <div className={classes.containerFront}>
           <Banner>
             <img
@@ -46,10 +43,10 @@ function About(props) {
               alt="services 3d"
             />
           </Banner>
-          <CompanyLogo />
+          {/* <CompanyLogo />
           <div className={classes.spaceTopShort}>
             <Counter />
-          </div>
+          </div> */}
           <div className={classes.spaceTopShort}>
             <Container>
               <Grid container justify="center" spacing={6}>
@@ -78,13 +75,12 @@ function About(props) {
 }
 
 About.getInitialProps = async () => ({
-  namespacesRequired: ['common'],
+  namespacesRequired: ["common"],
 });
 
 About.propTypes = {
   onToggleDark: PropTypes.func.isRequired,
   onToggleDir: PropTypes.func.isRequired,
 };
-
 
 export default About;
