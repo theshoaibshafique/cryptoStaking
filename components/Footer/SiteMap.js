@@ -23,6 +23,7 @@ import brand from "~/public/text/brand";
 import { useTextAlign } from "~/theme/common";
 import useStyles from "./sitemap-style";
 import BookIcon from "@material-ui/icons/Book";
+import { useRouter } from "next/router";
 
 function Copyright() {
   return (
@@ -39,6 +40,7 @@ const footers = [
     description: ["Home", "Why Us?", "Delegate", "Faq", "About"],
     link: ["#home", "#choose", "#delegate", "#faq", "about"],
   },
+
   // {
   //   title: "Resources",
   //   description: [
@@ -67,7 +69,7 @@ function Footer(props) {
   const theme = useTheme();
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
   const isMobile = useMediaQuery(theme.breakpoints.down("sm"));
-
+  const router = useRouter();
   // Translation Function
   const { t } = props;
 
@@ -136,10 +138,16 @@ function Footer(props) {
                     </Typography>
                     <ul>
                       {footer.description.map((item, index) => (
-                        <li key={item}>
-                          <Link href={footer.link[index]} variant="subtitle1">
-                            {item}
-                          </Link>
+                        <li
+                          key={item}
+                          onClick={() => {
+                            router.push(`/${footer.link[index]}`);
+                          }}
+                          style={{
+                            cursor: "pointer",
+                          }}
+                        >
+                          {item}
                         </li>
                       ))}
                     </ul>
@@ -167,14 +175,16 @@ function Footer(props) {
                     <AccordionDetails>
                       <ul>
                         {footer.description.map((item, index) => (
-                          <li key={item}>
-                            <Link
-                              href={footer.link[index]}
-                              variant="subtitle1"
-                              color="textSecondary"
-                            >
-                              {item}
-                            </Link>
+                          <li
+                            key={item}
+                            onClick={() => {
+                              router.push(`/${footer.link[index]}`);
+                            }}
+                            style={{
+                              cursor: "pointer",
+                            }}
+                          >
+                            {item}
                           </li>
                         ))}
                       </ul>

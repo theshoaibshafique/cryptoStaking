@@ -1,7 +1,7 @@
-import React from 'react';
-import Document, { Html, Main, NextScript } from 'next/document';
-import { ServerStyleSheets } from '@material-ui/styles';
-import HeadComponent from '../components/head';
+import React from "react";
+import Document, { Html, Main, NextScript } from "next/document";
+import { ServerStyleSheets } from "@material-ui/styles";
+import HeadComponent from "../components/head";
 
 class MyDocument extends Document {
   render() {
@@ -12,21 +12,22 @@ class MyDocument extends Document {
           <div
             id="preloader"
             style={{
-              position: 'fixed',
+              position: "fixed",
               zIndex: 10000,
-              background: '#fafafa',
-              width: '100%',
-              height: '100%',
+              background: "#fafafa",
+              width: "100%",
+              height: "100%",
             }}
           >
             <img
               style={{
-                opacity: 0.2,
-                position: 'fixed',
-                top: 'calc(50% - 50px)',
-                left: 'calc(50% - 50px)'
+                opacity: 1,
+                position: "fixed",
+                top: "calc(50% - 50px)",
+                left: "calc(45%)",
+                width: "200px",
               }}
-              src="/images/preloader.gif"
+              src="/images/smart-logo.svg"
               alt="loading"
             />
           </div>
@@ -38,7 +39,7 @@ class MyDocument extends Document {
   }
 }
 
-MyDocument.getInitialProps = async ctx => {
+MyDocument.getInitialProps = async (ctx) => {
   // Resolution order
   //
   // On the server:
@@ -66,20 +67,21 @@ MyDocument.getInitialProps = async ctx => {
   const originalRenderPage = ctx.renderPage;
 
   ctx.renderPage = () =>
-    originalRenderPage({ // eslint-disable-line
-      enhanceApp: App => props => sheets.collect(<App {...props} />), // eslint-disable-line
+    originalRenderPage({
+      // eslint-disable-line
+      enhanceApp: (App) => (props) => sheets.collect(<App {...props} />), // eslint-disable-line
     });
 
   const initialProps = await Document.getInitialProps(ctx);
 
   return {
     ...initialProps,
-    namespacesRequired: ['common', 'crypto-landing'],
+    namespacesRequired: ["common", "crypto-landing"],
     // Styles fragment is rendered after the app and page rendering finish.
     styles: (
       <React.Fragment>
         {initialProps.styles}
-        {process.env.NODE_ENV === 'development' && sheets.getStyleElement()}
+        {process.env.NODE_ENV === "development" && sheets.getStyleElement()}
       </React.Fragment>
     ),
   };
