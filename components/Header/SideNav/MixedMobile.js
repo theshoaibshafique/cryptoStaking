@@ -15,6 +15,7 @@ import useStyles from "../sidenav-style";
 import navMenu from "../data/single";
 import navPage from "../data/sample-pages";
 import link from "~/public/text/link";
+import { useRouter } from "next/router";
 
 function MixedMobile(props) {
   const classes = useStyles();
@@ -81,7 +82,8 @@ function MixedMobile(props) {
       ))}
     </Collapse>
   );
-
+  const router = useRouter();
+  const menuData = ["home", "choose", "delegate", "faq", "about"];
   return (
     <SwipeableDrawer
       open={open}
@@ -94,19 +96,58 @@ function MixedMobile(props) {
       <div className={classes.mobileNav} role="presentation">
         <div className={open ? classes.menuOpen : ""}>
           <List component="nav" className={classes.sideSinglelv}>
-            {navMenu.map((item, index) => (
-              <ListItem
-                button
-                index={index.toString()}
-                component="a"
-                href={`#${item}`}
-                key={item}
-                onClick={toggleDrawer}
-                onKeyDown={toggleDrawer}
-              >
-                <ListItemText primary={item} className={classes.menuList} />
-              </ListItem>
-            ))}
+            {/* {navMenu.map((item, index) => ( */}
+            <ListItem
+              button
+              onClick={() => {
+                router.push("/#home");
+                toggleDrawer();
+              }}
+              onKeyDown={toggleDrawer}
+            >
+              <ListItemText primary="Home" className={classes.menuList} />
+            </ListItem>
+            <ListItem
+              button
+              onClick={() => {
+                router.push("/#choose");
+                toggleDrawer();
+              }}
+              onKeyDown={toggleDrawer}
+            >
+              <ListItemText primary="Why Us?" className={classes.menuList} />
+            </ListItem>
+            <ListItem
+              button
+              onClick={() => {
+                router.push("/#delegate");
+                toggleDrawer();
+              }}
+              onKeyDown={toggleDrawer}
+            >
+              <ListItemText primary="Delegate" className={classes.menuList} />
+            </ListItem>
+            <ListItem
+              button
+              onClick={() => {
+                router.push("/#faq");
+                toggleDrawer();
+              }}
+              onKeyDown={toggleDrawer}
+            >
+              <ListItemText primary="FAQ" className={classes.menuList} />
+            </ListItem>
+            <ListItem
+              button
+              onClick={() => {
+                router.push("/about");
+                toggleDrawer();
+              }}
+              onKeyDown={toggleDrawer}
+            >
+              <ListItemText primary="About" className={classes.menuList} />
+            </ListItem>
+            {/* ))} */}
             {/* <ListItem
               button
               className={expand.samplePage ? classes.currentParent : ""}

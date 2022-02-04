@@ -47,7 +47,7 @@ function MixedNav(props) {
     setLangPath("/" + i18n.options.localeSubpaths[i18n.language]);
   }, []);
 
-  const menuData = ["home", "choose", "delegate", "faq"];
+  const menuData = ["home", "choose", "delegate", "faq", "about"];
 
   return (
     <Scrollspy
