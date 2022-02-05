@@ -38,9 +38,7 @@ function About(props) {
         <div className={classes.containerFront}>
           <Banner>
             <img
-              src={imgAPI.cryptoInner[1]}
-              data-2d={imgAPI.cryptoInner[0]}
-              data-3d={imgAPI.cryptoInner[1]}
+              src={"https://i.ibb.co/5KF28mv/about-3d-2x.png"}
               className="img-2d3d"
               alt="services 3d"
             />
