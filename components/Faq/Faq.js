@@ -112,9 +112,7 @@ function Faq(props) {
             <Hidden smDown>
               <div className={classes.illustration}>
                 <img
-                  src={imgAPI.cryptoInner[7]}
-                  data-2d={imgAPI.cryptoInner[6]}
-                  data-3d={imgAPI.cryptoInner[7]}
+                  src="https://i.ibb.co/ZNW7DSm/faq-3d-2x.png"
                   className="img-2d3d"
                   alt="faq 3d"
                 />
