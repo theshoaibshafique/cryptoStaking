@@ -11,7 +11,7 @@ import { Paper, Grid, Slider, TextField } from "@material-ui/core";
 import Header from "../../components/Header";
 import PropTypes from "prop-types";
 import axios from "axios";
-
+import Button from "@material-ui/core/Button";
 import { LineChart, Line, ResponsiveContainer } from "recharts";
 
 import LanguageIcon from "@material-ui/icons/Language";
@@ -52,35 +52,8 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
   const [marketData, setMarketData] = useState([]);
   const [coinAmount, setCoinAmount] = useState(1000);
   const [coinAPR, setCoinAPR] = useState("");
+  const [coinLink, setCoinLink] = useState("");
   var chartData = [];
-  const coinReward = [
-    { symbol: "bcna", value: "30.52", rewardToken: "akash" },
-    { symbol: "btsg", value: "00.00", rewardToken: "akash" },
-    { symbol: "cheq", value: "00.00", rewardToken: "akash" },
-    { symbol: "hua", value: "00.00", rewardToken: "akash" },
-    { symbol: "cmdx", value: "00.00", rewardToken: "akash" },
-    { symbol: "atom", value: "13.17", rewardToken: "cosmos" },
-    { symbol: "dsm", value: "00.00", rewardToken: "akash" },
-    { symbol: "ngm", value: "17.62", rewardToken: "e-money" },
-    { symbol: "fet", value: "00.00", rewardToken: "akash" },
-    { symbol: "ixo", value: "00.00", rewardToken: "akash" },
-    { symbol: "juno", value: "00.00", rewardToken: "akash" },
-    { symbol: "kava", value: "5.56", rewardToken: "kava" },
-    { symbol: "wicc", value: "00.00", rewardToken: "akash" },
-    { symbol: "lum", value: "00.00", rewardToken: "akash" },
-    { symbol: "med", value: "00.00", rewardToken: "akash" },
-    { symbol: "TICK", value: "00.00", rewardToken: "akash" },
-    { symbol: "odin", value: "3.83", rewardToken: "odins-pool" },
-    {
-      symbol: "akt",
-      value: "00.00",
-      rewardToken: "akash",
-    },
-    { symbol: "osmo", value: "66.88", rewardToken: "osmosis" },
-    { symbol: "xprt", value: "30.35", rewardToken: "persistence" },
-    { symbol: "dvpn", value: "56.56", rewardToken: "sentinel" },
-    { symbol: "erowan", value: "112.85", rewardToken: "sifchain" },
-  ];
 
   const getData = async () => {
     await axios
@@ -97,6 +70,7 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
           )
           .then(function (response) {
             setCoinAPR(response.data.fields.value);
+            setCoinLink(response.data.fields.link.stringValue);
           })
           .catch(function (error) {
             // handle error
@@ -173,10 +147,25 @@ const Staking = ({ coinId, onToggleDark, onToggleDir }) => {
                   <div style={{ marginTop: "10px" }}>
                     {coinData?.description?.en}
                   </div>
-                  <div style={{ marginTop: "10px" }}>
+                  <div
+                    style={{
+                      marginTop: "10px",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
                     <span className={text.title4}>
                       Link to Useful Information
                     </span>
+                    <Button
+                      variant="contained"
+                      color="primary"
+                      href={coinLink}
+                      target="_blank"
+                    >
+                      Delegate
+                    </Button>
                   </div>
                   <div className={classes2.links}>
                     <span>
