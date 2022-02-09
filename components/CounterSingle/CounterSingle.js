@@ -56,7 +56,7 @@ function CounterSingle(props) {
               <p className={text.subtitle2}>{name}</p>
               <Typography variant="h2" className={text.title}>
                 {/* $ {countup(data?.balance?.integerValue, play)} */}
-                $ <CountUp end={data1} />
+                $ <CountUp separator="," end={data1} />
               </Typography>
             </>
           ) : (
@@ -64,7 +64,7 @@ function CounterSingle(props) {
               <p className={text.subtitle2}>{name}</p>
               <Typography variant="h2" className={text.title}>
                 {/* {countup(data?.users?.integerValue, play)} */}
-                <CountUp end={data2} />
+                <CountUp separator="," end={data2} />
               </Typography>
             </>
           )}

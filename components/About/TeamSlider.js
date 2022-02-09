@@ -25,11 +25,12 @@ function PhotoSlider(props) {
   const [loaded, setLoaded] = useState(false);
 
   const settings = {
-    dots: true,
+    dots: false,
     arrows: false,
-    slidesToShow: 1,
+    slidesToShow: 4,
     variableWidth: true,
     autoplay: false,
+    infinite: false,
     responsive: [
       {
         breakpoint: 800,

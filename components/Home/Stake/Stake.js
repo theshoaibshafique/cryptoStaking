@@ -131,6 +131,7 @@ function Stake(props) {
                 <Paper className={classes.paper}>
                   <img src={item.image.large} alt="" />
                   <h4 className={text.title2}>
+                    APR{" "}
                     {coinAPR.find(
                       (x) => x?.fields?.symbol?.stringValue == item.symbol
                     )
