@@ -173,7 +173,7 @@ function MixedMobile(props) {
                     : ""
                 )}
                 component="a"
-                href="http://5.9.249.226/dashboard"
+                href="http://smartnodes.one/dashboard/"
                 button
                 target="_blank"
               >

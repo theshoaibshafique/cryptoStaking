@@ -28,7 +28,7 @@ function UserMenu(props) {
           <Button
             variant="contained"
             color="primary"
-            href="http://5.9.249.226/dashboard"
+            href="http://smartnodes.one/dashboard/"
             target="_blank"
           >
             Dashboard

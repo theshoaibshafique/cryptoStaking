@@ -237,6 +237,19 @@ function Footer(props) {
               </IconButton>
             </a>
             <a
+              href="https://www.youtube.com/channel/UCWE4DmXbutLlUuMJx3-NhCw"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <IconButton
+                aria-label="YT"
+                className={classes.margin}
+                size="small"
+              >
+                <i className="ion-social-youtube" />
+              </IconButton>
+            </a>
+            <a
               href="https://github.com/Smart-Nodes"
               target="_blank"
               rel="noreferrer"
